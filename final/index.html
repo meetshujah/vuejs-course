@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Methods</title>
+
+    <!-- roboto font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper" id="app">
+      <div class="counter">{{counter}}</div>
+      <button @click="increase">Increase</button>
+      <button @click="decrease">Decrease</button>
+      <button @click="reset">Reset</button>
+    </div>
+    <!-- vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          counter: 0,
+        },
+        methods: {
+          increase() {
+            this.counter++;
+          },
+          decrease() {
+            this.counter--;
+          },
+          reset() {
+            this.counter = 0;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+body {
+  background-color: #02c39a;
+  width: 100vw;
+  min-height: 100vh;
+  font-family: "Grenze Gotisch", cursive;
+}
+
+.box__custom {
+  text-align: center;
+  border-radius: 0px;
+  transform: skewX(-20deg);
+  transition: all 0.4s;
+  border-left: 10px solid #e9c46a;
+  border-right: 10px solid #e9c46a;
+}
+.box__custom * {
+  transform: skewX(20deg);
+}
+
+.box__custom:hover {
+}
+
+.title {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#05668d, #02c39a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

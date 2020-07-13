@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Binding</title>
+
+    <!-- Bulma.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+
+    <!-- Roboto Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      #app {
+        min-height: 100vh;
+      }
+      .is-completed {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="app" class="has-background-light py-6">
+      <div class="columns is-multiline">
+        <div
+          class="column is-6 is-offset-3"
+          v-for="todo in todos"
+          v-bind:key="todo.id"
+        >
+          <div
+            class="box"
+            v-bind:class="{'is-completed has-background-warning':todo.completed}"
+          >
+            {{todo.title}}
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          todos: [
+            {
+              userId: 1,
+              id: 1,
+              title: "delectus aut autem",
+              completed: false,
+            },
+            {
+              userId: 1,
+              id: 2,
+              title: "quis ut nam facilis et officia qui",
+              completed: false,
+            },
+            {
+              userId: 1,
+              id: 3,
+              title: "fugiat veniam minus",
+              completed: true,
+            },
+            {
+              userId: 1,
+              id: 4,
+              title: "et porro tempora",
+              completed: true,
+            },
+            {
+              userId: 1,
+              id: 5,
+              title:
+                "laboriosam mollitia et enim quasi adipisci quia provident illum",
+              completed: false,
+            },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>

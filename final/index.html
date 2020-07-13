@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Binding</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+
+    <style>
+      #app {
+        width: 100vw;
+        min-height: 100vh;
+        transition: all 0.7s;
+      }
+    </style>
+  </head>
+  <body>
+    <section
+      id="app"
+      v-bind:style="{'background-color':mode == 'light' ? lightTheme: darkTheme  }"
+    >
+      <div class="section">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-12">
+              <button class="button is-dark" @click="toggleMode">
+                dark Mode
+              </button>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column is-4">
+              <div class="box">
+                <img
+                  src="https://source.unsplash.com/400x250/?nature,water"
+                  alt=""
+                />
+                <h2 class="title is-5">Post Title</h2>
+                <p class="subtitle is-6">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Laborum adipisci error vitae sapiente dolore sit doloribus qui
+                </p>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box">
+                <img
+                  src="https://source.unsplash.com/400x250/?nature,water"
+                  alt=""
+                />
+                <h2 class="title is-5">Post Title</h2>
+                <p class="subtitle is-6">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Laborum adipisci error vitae sapiente dolore sit doloribus qui
+                </p>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box">
+                <img
+                  src="https://source.unsplash.com/400x250/?nature,water"
+                  alt=""
+                />
+                <h2 class="title is-5">Post Title</h2>
+                <p class="subtitle is-6">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Laborum adipisci error vitae sapiente dolore sit doloribus qui
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          mode: "light",
+          lightTheme: "#f4f4f4",
+          darkTheme: "#111",
+        },
+        methods: {
+          toggleMode() {
+            if (this.mode == "light") {
+              this.mode = "dark";
+            } else {
+              this.mode = "light";
+            }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

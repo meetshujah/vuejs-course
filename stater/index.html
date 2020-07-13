@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two Way Binding</title>
+
+    <!-- roboto font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- bulma.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <section id="app">
+      <div class="section">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-6">
+              <img src="img/hero.png" alt="" />
+            </div>
+            <div class="column is-6">
+              <form>
+                <div class="field">
+                  <label class="label">Name</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="Enter Your Name"
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">E-mail</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="Enter Your E-mail Address"
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Choose your state</label>
+                  <select class="input">
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="West Bengal">West Bengal</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label class="label">Choose your gender</label>
+                  <div class="control">
+                    <label class="radio">
+                      <input type="radio" name="gender" />
+                      Male
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="gender" />
+                      Female
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="gender" />
+                      Other
+                    </label>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Enter Your Bio</label>
+                  <textarea
+                    class="textarea"
+                    placeholder="e.g. Hello world"
+                  ></textarea>
+                </div>
+                <div class="field">
+                  <button class="button is-primary">Create new account</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+      // YOUR VUEJS CODE
+    </script>
+  </body>
+</html>

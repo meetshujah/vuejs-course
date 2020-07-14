@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Props</title>
+
+    <!-- bulma.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+  </head>
+  <style>
+    #app {
+      width: 100vw;
+      min-height: 100vh;
+    }
+  </style>
+  <body>
+    <section id="app" class="has-background-light py-6">
+      <div class="columns is-multiline">
+        <todo-list
+          v-for="todo in todos"
+          v-bind:key="todo.id"
+          v-bind:todo="todo"
+        />
+      </div>
+    </section>
+    <!-- vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+      Vue.component("todo-list", {
+        template: `
+        <div class="column is-6 is-offset-3">
+        <div class="box">{{todo.title}}</div>
+        </div>`,
+        props: {
+          todo: Object,
+        },
+      });
+      new Vue({
+        el: "#app",
+        data: {
+          todos: [
+            {
+              userId: 1,
+              id: 1,
+              title: "delectus aut autem",
+              completed: false,
+            },
+            {
+              userId: 1,
+              id: 2,
+              title: "quis ut nam facilis et officia qui",
+              completed: false,
+            },
+            {
+              userId: 1,
+              id: 3,
+              title: "fugiat veniam minus",
+              completed: false,
+            },
+            {
+              userId: 1,
+              id: 4,
+              title: "et porro tempora",
+              completed: true,
+            },
+            {
+              userId: 1,
+              id: 5,
+              title:
+                "laboriosam mollitia et enim quasi adipisci quia provident illum",
+              completed: false,
+            },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>
